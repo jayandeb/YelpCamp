@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate') %>
+<div class="container py-5">
+    <div class="row justify-content-between ">
+        <div class="col-5 ">
+            <h1>Login</h1>
+            <form action="/login" method="POST" class="campground-form" novalidate>
+                <div class="mb-4">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <button class="btn btn-primary">Login</button>
+            </form>
+        </div>
+        <div class="col-5">
+            <div class="card" ">
+                <img src="/images/pexels-tatiana-syrikova-3933881.jpg" class="card-img-top" alt="">
+            
+                <div class="card-body">
+                  <p class="card-text">Welcome back Bagpacker!!!</p>
+                </div>
+              </div>
+
+        </div>
+    </div>
+</div>
