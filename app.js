@@ -196,6 +196,10 @@ app.use((err, req, res, next) => {
 //     const camp = new Campground({ title: 'Js Abode', price: '$2.4', description: 'Newly Opened Losts of activities', location: 'Lhomithi Village' })
 //     await camp.save();
 //     res.send("CampGround Created")
-app.listen(3000, () => {
-  console.log("Serving on port 3000");
+
+
+const port= process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Serving on port ${port}`);
 });
