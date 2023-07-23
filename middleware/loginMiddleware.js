@@ -3,8 +3,7 @@ const Review = require('../models/review');
 const { campgroundSchema, reviewSchema } = require('../schema')
 const ExpressError = require('../utitlities/ExpressError')
 
-
-
+// MIDDLEWARE to check i user is logged in or not
 module.exports.isLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
     req.session.returnTo = req.originalUrl;
@@ -14,6 +13,8 @@ module.exports.isLoggedIn = (req, res, next) => {
   next();
 };
 
+
+//MIDDLEWARE  to store where a user was trying to navigate before login and after logging in redirects user to the stored path
 module.exports.storeReturnTo = (req, res, next) => {
   if (req.session.returnTo) {
     res.locals.returnTo = req.session.returnTo;
@@ -33,6 +34,8 @@ module.exports.validateCampground = (req, res, next) => {
     next()
   }
 }
+
+// to validate review 
 module.exports.validateReview = (req, res, next) => {
   const { error } = reviewSchema.validate(req.body)
   if (error) {
