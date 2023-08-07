@@ -43,7 +43,7 @@ app.use(methodOverride("_method"));
 //routes
 const campgroundRoute = require("./routes/campground");
 const reviewRoute = require("./routes/review");
-const userRoute = require("./routes/userRegfstoreReturnTotration");
+const userRoute = require("./routes/userRegistration");
 
 // "mongodb://127.0.0.1:27017/yelp-camp"
 const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/yelp-camp';
